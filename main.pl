@@ -77,7 +77,7 @@ subnav(Base, Dir, ["name"-Dir, "nav"-Nav, "type"-"dir"]) :-
     maplist(subnav(DirSg), FilesSorted, Items),
     render("nav.html", ["items"-Items], Nav).
 
-subnav(Base, File, ["name"-Name, "link"-['/'|Link], "type"-"file"]) :-
+subnav(Base, File, ["name"-Name, "link"-Link, "type"-"file"]) :-
     append(Base, [File], FileSg),
     append(Name, ".pl", File),
     path_segments(FilePath, FileSg),
